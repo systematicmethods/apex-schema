@@ -1,5 +1,4 @@
-# Apex ER Schema
-
+# Apex Schema
  
 
 Entities
@@ -47,4 +46,3 @@ Relationship Types
     -   Entity Primary key
 
     -   Allowable In Entities
-# apex-schema
