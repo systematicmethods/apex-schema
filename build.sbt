@@ -8,27 +8,25 @@ scalaVersion := "2.11.7"
 
 resolvers += Resolver.mavenLocal
 
+val OrientDBVersion = "2.2.0-beta2"
+val SparkVersion = "1.6.1"
+    
 libraryDependencies ++= Seq(
   "org.apache.avro" % "avro" % "1.8.0",
   "ch.qos.logback" % "logback-classic" % "1.1.3",
-  "com.orientechnologies" % "orientdb-core" % "2.2.0-beta2",
-  "com.orientechnologies" % "orientdb-object" % "2.2.0-beta2",
-  "com.orientechnologies" % "orientdb-graphdb" % "2.2.0-beta2",
-  "com.orientechnologies" % "orientdb-client" % "2.2.0-beta2",
-//  "com.github.melrief" %% "purecsv" % "0.0.6",
-//  "com.nrinaudo" %% "kantan.csv" % "0.1.8",
-//  "com.nrinaudo" %% "kantan.csv-generic" % "0.1.8",
-//  "com.nrinaudo" %% "kantan.csv-scalaz" % "0.1.8",
-//  "com.nrinaudo" %% "kantan.csv-scalaz-stream" % "0.1.8",
-//  "com.nrinaudo" %% "kantan.csv-cats" % "0.1.8",
+  "com.orientechnologies" % "orientdb-core" % OrientDBVersion,
+  "com.orientechnologies" % "orientdb-object" % OrientDBVersion,
+  "com.orientechnologies" % "orientdb-graphdb" % OrientDBVersion,
+  "com.orientechnologies" % "orientdb-client" % OrientDBVersion,
   "com.opencsv" % "opencsv" % "3.3",
   "org.apache.commons" % "commons-csv" % "1.2",
-//  "com.chuusai" %% "shapeless" % "2.3.0",
-  "org.apache.spark" %% "spark-core" % "1.6.1",
-  "org.apache.spark" %% "spark-sql" % "1.6.1",
-  "org.apache.spark" %% "spark-streaming" % "1.6.1",
-  "org.apache.spark" %% "spark-mllib" % "1.6.1",
+  "org.apache.spark" %% "spark-core" % SparkVersion,
+  "org.apache.spark" %% "spark-sql" % SparkVersion,
+  "org.apache.spark" %% "spark-streaming" % SparkVersion,
+  "org.apache.spark" %% "spark-mllib" % SparkVersion,
   "com.databricks" %% "spark-csv" % "1.4.0",
+  "com.typesafe.play" %% "play-json" % "2.5.2",
+
 
 // internal
 

@@ -15,13 +15,12 @@ class SchemaReferenceTest {
     val rd = this.getClass.getClassLoader.getResourceAsStream("Entities.csv")
     val entities = Entities(rd)
     assertEquals(28, entities.size)
-    val recs = entities.records.values.filter(_.get(Entities.typeName) == "Organisation")
+    val recs = entities.records.values.filter(_.record.get(Entity.typeName) == "Organisation")
     assertEquals(1, recs.size)
     recs.foreach { rec => {
-      assertEquals("Party", rec.get("Subject_Area")) 
-      assertTrue(rec.get("Active_Flag").isInstanceOf[Boolean])
-      assertEquals(true, rec.get("Active_Flag"))
-      assertEquals("A corporate client - formerly known as Institution", rec.get("Description"))
+      assertEquals("Party", rec.record.get("Subject_Area")) 
+      assertTrue(rec.active)
+      assertEquals("A corporate client - formerly known as Institution", rec.description)
       }
     }
   }
@@ -40,19 +39,19 @@ class SchemaReferenceTest {
 
   @Test
   def testImportAvro_Relationship_Classes: Unit = {
-    val recs = RelationshipClasses(getClass.getClassLoader.getResourceAsStream("Relationship_Classes.csv"))
+    val recs = RelationshipGroups(getClass.getClassLoader.getResourceAsStream("Relationship_Classes.csv"))
     assertEquals(29, recs.size)
   }
 
   @Test
   def testImportAvro_Entity_Classes: Unit = {
-    val recs = EntityClasses(getClass.getClassLoader.getResourceAsStream("Entity_Classes.csv"))
+    val recs = EntityGroups(getClass.getClassLoader.getResourceAsStream("Entity_Classes.csv"))
     assertEquals(75, recs.size)
   }
 
   @Test
   def testImportAvro_Classes: Unit = {
-    val recs = Classes(getClass.getClassLoader.getResourceAsStream("Classes.csv"))
+    val recs = Groups(getClass.getClassLoader.getResourceAsStream("Classes.csv"))
     assertEquals(64, recs.size)
   }
 
