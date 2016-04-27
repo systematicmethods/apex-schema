@@ -30,9 +30,10 @@ trait SchemaItem {
   protected def record:GenericRecord
   def active: Boolean = record.get("Active_Flag").asInstanceOf[Boolean]
   def name:String
-  def recname:String = name.replaceAll(" ", "_")
+  def recname:String = spaceTo_(name)
   def description:String = record.get("Description").asInstanceOf[String]
   def subjectArea:String = record.get("Subject_Area").asInstanceOf[String]
+  def spaceTo_(aname:String) = aname.replaceAll(" ", "_")
 }
 
 trait SchemaItems[A <: SchemaItem] {
@@ -81,6 +82,7 @@ object Relationships {
 
 case class RelationshipValid(record:GenericRecord) extends SchemaItem {
   override def name:String = record.get(Relationship.typeName).asInstanceOf[String]
+  def relationship:String = record.get("Relationship").asInstanceOf[String]
   def entityStart:String = record.get("Entity_Start").asInstanceOf[String]
   def entityEnd:String = record.get("Entity_End").asInstanceOf[String]
 }
