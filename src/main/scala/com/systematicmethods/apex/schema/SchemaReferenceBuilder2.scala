@@ -47,53 +47,13 @@ object SchemaReferenceBuilder2 {
   }
 
   /*
- {
-          "name": "vertices",
-          "type": {
-            "type": "record",
-            "name": "IS_RELATIONSHIP_MANAGER_TO_vertices",
-            "fields": [
-              {
-                "name": "out_vertex",
-                "type": "string"
-              },
-              {
-                "name": "out_vertex_label",
-                "type": {
-                  "type": "enum",
-                  "name": "IS_RELATIONSHIP_MANAGER_TO_OUT_ENUM",
-                  "symbols": [
-                    "Relationship_Manager"
-                  ]
-                }
-              },
-              {
-                "name": "in_vertex",
-                "type": "string"
-              },
-              {
-                "name": "in_vertex_label",
-                "type": {
-                  "type": "enum",
-                  "name": "IS_RELATIONSHIP_MANAGER_TO_IN_ENUM",
-                  "symbols": [
-                    "Organisation",
-                    "Person"
-                  ]
-                }
-              }
-            ]
-          }
-        },
- 
-Subject_Area,Active_Flag,Entity_Start,Relationship,Relationship_Instance_Number,Entity_End,Description
-Party,Yes,Relationship Manager,IS_RELATIONSHIP_MANAGER_TO,1,Organisation,A Relationship Manager manages an Organisation
-Party,Yes,Relationship Manager,IS_RELATIONSHIP_MANAGER_TO,2,Person,A Relationship Manager manages a Person
- 
- find starts 
- N rels for start
- N rels for end
- 
+ 			,{
+        "name" : "out_vertex_pk",
+        "type" : {
+          "type" : "array",
+          "items" : "string"
+        }
+      },
    */
   private def makeRelationship(rel: SchemaItem, namespace:String): JsValue = {
     val groups = relationshipGroups.filter(rel.name)
@@ -114,13 +74,17 @@ Party,Yes,Relationship Manager,IS_RELATIONSHIP_MANAGER_TO,2,Person,A Relationshi
 
   // TODO: primary key for out and in
   private def makeOutRelationship(rel: SchemaItem, validRels: Map[String, RelationshipValid]): JsObject = {
-    val outsyms = validRels.values.map(vrel => JsString(vrel.spaceTo_(vrel.entityStart))).toSet.toList
-    val insyms = validRels.values.map(vrel => JsString(vrel.spaceTo_(vrel.entityEnd))).toSet.toList
+    val outEntities = validRels.values.map(vrel => vrel.entityStart).toSet.toList
+    val inEntities = validRels.values.map(vrel => vrel.entityEnd).toSet.toList
+    val outpks = makePK(outEntities)
+    val inpks = makePK(inEntities)
+    val outsyms = outEntities.map(aname => JsString(SchemaItem.spaceTo_(aname)))
+    val insyms = inEntities.map(aname => JsString(SchemaItem.spaceTo_(aname)))
     val fields = JsObject(Seq(
       ("name" -> JsString("vertices")), 
       ("type" -> JsObject(Seq(
-        ("type" -> JsString("record")),
         ("name" -> JsString(rel.recname + "_vertices")),
+        ("type" -> JsString("record")),
         ("fields" -> JsArray(Seq(
           JsObject(Seq(
             ("name" -> JsString("out_vertex")),
@@ -130,8 +94,10 @@ Party,Yes,Relationship Manager,IS_RELATIONSHIP_MANAGER_TO,2,Person,A Relationshi
             ("type" -> JsObject(Seq(
               ("type" -> JsString("enum")),
               ("name" -> JsString(rel.recname + "_OUT_ENUM")),
-              ("symbols" -> JsArray(outsyms))
-            ))))),
+              ("symbols" -> JsArray(outsyms)),
+              ("schematype" -> JsArray(outpks))
+            ))
+          ))),
           JsObject(Seq(
             ("name" -> JsString("in_vertex")),
             ("type" -> JsString("string")))),
@@ -140,12 +106,30 @@ Party,Yes,Relationship Manager,IS_RELATIONSHIP_MANAGER_TO,2,Person,A Relationshi
             ("type" -> JsObject(Seq(
               ("type" -> JsString("enum")),
               ("name" -> JsString(rel.recname + "_IN_ENUM")),
-              ("symbols" -> JsArray(insyms))
-            )))))
+              ("symbols" -> JsArray(insyms)),
+              ("schematype" -> JsArray(inpks))
+            ))
+          )))
         )))
       ))
     )))
     fields  
+  }
+  
+  private def makePK(entities: List[String]):Seq[JsObject] = {
+    val props = for {
+      entityName <- entities
+      groups <- entityGroups.filter(entityName).values
+      prop <- entityProperties.values.filter(ep => ep.isPrimaryKey)
+      if prop.group == groups.group
+    } yield {
+      (entityName, prop.name)
+    }
+    props.map(ep => {
+      JsObject(Seq(
+          ("entity" -> JsString(SchemaItem.spaceTo_(ep._1))), 
+          ("primarykey" -> JsString(ep._2))))  
+    })
   }
   
   private def makeProperties(groups:Map[String, GroupTypes], properties:Map[String, Property], usePrimaryKey:Boolean):JsArray = {
@@ -176,7 +160,7 @@ Party,Yes,Relationship Manager,IS_RELATIONSHIP_MANAGER_TO,2,Person,A Relationshi
         ("name" -> JsString(rec.recname)), 
         ("type" -> dtopt))
         
-    val fields2 = if (usePrimaryKey && rec.primaryKey.toLowerCase == "yes")
+    val fields2 = if (usePrimaryKey && rec.isPrimaryKey)
       fields.+:("primarykey" -> JsBoolean(true))
     else 
       fields

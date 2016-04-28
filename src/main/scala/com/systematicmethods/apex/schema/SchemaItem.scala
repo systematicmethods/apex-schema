@@ -33,6 +33,9 @@ trait SchemaItem {
   def recname:String = spaceTo_(name)
   def description:String = record.get("Description").asInstanceOf[String]
   def subjectArea:String = record.get("Subject_Area").asInstanceOf[String]
+  def spaceTo_(aname:String) = SchemaItem.spaceTo_(aname)
+}
+object SchemaItem {
   def spaceTo_(aname:String) = aname.replaceAll(" ", "_")
 }
 
@@ -153,6 +156,7 @@ case class Property(record:GenericRecord) extends SchemaItem {
   def dataType  = record.get("DataType").asInstanceOf[String]
   def optional  = record.get("Optionality").asInstanceOf[String]
   def primaryKey  = record.get("PrimaryKey").asInstanceOf[String]
+  def isPrimaryKey:Boolean = primaryKey.toLowerCase == "yes"
 }
 object Property extends SchemaType {
   def typeName = "Property"
