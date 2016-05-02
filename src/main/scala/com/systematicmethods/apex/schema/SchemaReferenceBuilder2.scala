@@ -35,26 +35,70 @@ object SchemaReferenceBuilder2 {
   private def makeEntity(entity: SchemaItem, namespace:String): JsValue = {
     val groups = entityGroups.filter(entity.name)
     val props = makeProperties(groups, entityProperties, true)
+    val activeValidRels = validRelationships.active.filter(vrels => vrels._2.entityStart == entity.name)
+    val vrelsOpt = makeEntityRelationships(namespace, entity.recname, activeValidRels)
+    val propsrel = vrelsOpt.foldLeft(props)((props, vrels) => props.:+(vrels))
 
     val fields = Seq[(String, JsValue)](
         ("name" -> JsString(entity.recname)), 
         ("type" -> JsString("record")), 
         ("schematype" -> JsString("entity")), 
         ("namespace" -> JsString(s"${namespace}.public")),
-        ("fields" -> props)
+        ("fields" -> propsrel)
         )
     JsObject(fields)
   }
+  
+ /*
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Relationship_Manager_relationships",
+              "fields": [
+                {
+                  "name": "IS_RELATIONSHIP_MANAGER_TO",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_RELATIONSHIP_MANAGER_TO"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "REPORTS_TO",
 
-  /*
- 			,{
-        "name" : "out_vertex_pk",
-        "type" : {
-          "type" : "array",
-          "items" : "string"
-        }
-      },
-   */
+  */
+  private def makeEntityRelationships(namespace:String, relRecname:String, activeValidRels: Map[String, RelationshipValid]): Option[JsObject] = {
+    if (activeValidRels.size == 0)  None
+    else {
+      val rels = for {
+        rel <- activeValidRels.values.toList
+      } yield {
+        JsObject(Seq(
+//          ("type" -> JsString("record")),
+          ("name" -> JsString(SchemaItem.spaceTo_(rel.relationship) + "_" + SchemaItem.spaceTo_(rel.entityEnd))), 
+          ("type" -> JsArray(Seq(JsObject(Seq(
+              ("type" -> JsString("array")),
+              ("items" -> JsString(namespace + ".private." + SchemaItem.spaceTo_(rel.relationship)))
+          ))))
+        )))
+        //rel.entityStart
+      }
+      Some(JsObject(Seq(
+          ("name" -> JsString("relationships")), 
+          ("type" -> JsArray(Seq(JsObject(Seq(
+            ("type" -> JsString("record")),
+            ("name" -> JsString(relRecname + "_relationships")), 
+            ("fields" -> JsArray(rels)
+          )))))
+        )))
+      )
+    }
+  }
+
   private def makeRelationship(rel: SchemaItem, namespace:String): JsValue = {
     val groups = relationshipGroups.filter(rel.name)
     val validRels = validRelationships.active.filter(vrels => vrels._2.relationship == rel.name)
@@ -72,7 +116,6 @@ object SchemaReferenceBuilder2 {
     JsObject(record)
   }
 
-  // TODO: primary key for out and in
   private def makeOutRelationship(rel: SchemaItem, validRels: Map[String, RelationshipValid]): JsObject = {
     val outEntities = validRels.values.map(vrel => vrel.entityStart).toSet.toList
     val inEntities = validRels.values.map(vrel => vrel.entityEnd).toSet.toList
