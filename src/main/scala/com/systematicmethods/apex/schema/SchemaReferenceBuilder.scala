@@ -72,14 +72,17 @@ class SchemaReferenceBuilder(namespace:String,
   private def makeEntityRelationships(namespace:String, relavroname:String, activeValidRels: Map[String, RelationshipValid]): Option[JsObject] = {
     if (activeValidRels.size == 0)  None
     else {
+      // make sure relationships are unique as there can be more than one
+      val relnames = activeValidRels.values.toList.map(vl => vl.relationshipAvroName).distinct
+      //println(s"relnames=${relnames}")
       val rels = for {
-        rel <- activeValidRels.values.toList
+        relname <- relnames
       } yield {
         JsObject(Seq(
-          ("name" -> JsString(rel.relationshipAvroName + "_" + rel.entityEndAvroName)), 
+          ("name" -> JsString(relname)), //  + "_" + rel.entityEndAvroName
           ("type" -> JsArray(Seq(JsObject(Seq(
               ("type" -> JsString("array")),
-              ("items" -> JsString(namespace + ".private." + rel.relationshipAvroName))
+              ("items" -> JsString(namespace + ".private." + relname))
           ))))
         )))
       }

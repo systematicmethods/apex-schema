@@ -1,0 +1,6012 @@
+[
+    {
+      "name": "IS_RELATIONSHIP_MANAGER_TO",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_RELATIONSHIP_MANAGER_TO_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_RELATIONSHIP_MANAGER_TO_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_RELATIONSHIP_MANAGER_TO_IN_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Person"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTACT_REL_ID",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Type_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REPORTS_TO",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "REPORTS_TO_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "REPORTS_TO_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager",
+                    "Staff_Member"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "REPORTS_TO_IN_ENUM",
+                  "symbols": [
+                    "Staff_Member",
+                    "Relationship_Manager"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTACT_REL_ID",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Type_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HAS_RELATIONSHIP_WITH",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_RELATIONSHIP_WITH_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_RELATIONSHIP_WITH_OUT_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Organisation",
+                    "Person_Prospect"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_RELATIONSHIP_WITH_IN_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Organisation"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTACT_REL_ID",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Type_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WORKS_FOR",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "WORKS_FOR_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "WORKS_FOR_OUT_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Person_Prospect"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "WORKS_FOR_IN_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Organisation_Prospect"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTACT_REL_ID",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Type_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Legal_Representative_Indicator",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IS_PARENT_TO",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_PARENT_TO_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_PARENT_TO_OUT_ENUM",
+                  "symbols": [
+                    "Organisation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_PARENT_TO_IN_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Organisation_Prospect"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTACT_REL_ID",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Type_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IS_ULTIMATE_PARENT_TO",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_ULTIMATE_PARENT_TO_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_ULTIMATE_PARENT_TO_OUT_ENUM",
+                  "symbols": [
+                    "Organisation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_ULTIMATE_PARENT_TO_IN_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Organisation_Prospect"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTACT_REL_ID",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Relationship_Type_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Description",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HAS_ADDRESS",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_ADDRESS_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_ADDRESS_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager",
+                    "Staff_Member",
+                    "Person",
+                    "Organisation",
+                    "Person_Prospect",
+                    "Organisation_Prospect"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_ADDRESS_IN_ENUM",
+                  "symbols": [
+                    "Address"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "LOC_GROUP_TP_CODE",
+          "type": "string"
+        },
+        {
+          "name": "Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Address_Usage_Type",
+          "type": "string"
+        },
+        {
+          "name": "Address_Care_Of",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HAS_PHONE_NUMBER",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_PHONE_NUMBER_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_PHONE_NUMBER_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager",
+                    "Staff_Member",
+                    "Person",
+                    "Organisation",
+                    "Person_Prospect",
+                    "Organisation_Prospect"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_PHONE_NUMBER_IN_ENUM",
+                  "symbols": [
+                    "Phone_Number"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "LOC_GROUP_TP_CODE",
+          "type": "string"
+        },
+        {
+          "name": "Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Phone_Number_Type",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "HAS_EMAIL",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_EMAIL_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_EMAIL_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager",
+                    "Staff_Member",
+                    "Person",
+                    "Organisation",
+                    "Person_Prospect",
+                    "Organisation_Prospect"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_EMAIL_IN_ENUM",
+                  "symbols": [
+                    "Email"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "LOC_GROUP_TP_CODE",
+          "type": "string"
+        },
+        {
+          "name": "Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Email_Type",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "HAS_SOCIAL_MEDIA_HANDLE",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_SOCIAL_MEDIA_HANDLE_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager",
+                    "Staff_Member",
+                    "Person",
+                    "Organisation",
+                    "Person_Prospect",
+                    "Organisation_Prospect"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE_IN_ENUM",
+                  "symbols": [
+                    "Social_Media_Handle"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HAS_AGREEMENT_WITH",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_AGREEMENT_WITH_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_AGREEMENT_WITH_OUT_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Organisation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_AGREEMENT_WITH_IN_ENUM",
+                  "symbols": [
+                    "Contract"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Customer_Agreement_Value_Package_Type",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Agreement_Signed_Up_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Agreement_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Agreement_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Agreement_Business_Unit",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Agreement_Contract_Created_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Agreement_Contract_Effective_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IS_HOLDER_OF",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_HOLDER_OF_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_HOLDER_OF_OUT_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Organisation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_HOLDER_OF_IN_ENUM",
+                  "symbols": [
+                    "Contract_Component"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "CONTRACT_ROLE_ID",
+          "type": "string"
+        },
+        {
+          "name": "Contract_Role_Type",
+          "type": "string"
+        },
+        {
+          "name": "Registered_Name",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Distribution_Percentage",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Irrevocable_Indicator",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Share_Distribution_Type",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Arrangement_Type",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "End_Reason",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Role_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Role_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Recorded_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Recorded_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IS_RECOMMENDED_FOR",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_RECOMMENDED_FOR_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_RECOMMENDED_FOR_OUT_ENUM",
+                  "symbols": [
+                    "Product",
+                    "Product_Recommendation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_RECOMMENDED_FOR_IN_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Organisation",
+                    "Person_Prospect",
+                    "Organisation_Prospect"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Recommendation_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Recommendation_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IS_LINKED_WITH",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_LINKED_WITH_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_LINKED_WITH_OUT_ENUM",
+                  "symbols": [
+                    "Contract"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_LINKED_WITH_IN_ENUM",
+                  "symbols": [
+                    "Contract"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Contract_Relationship_Target_Type",
+          "type": "string"
+        },
+        {
+          "name": "Contract_Relationship_Source_Type",
+          "type": "string"
+        },
+        {
+          "name": "Contract_Relationship_Status",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Relationship_Start_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Relationship_End_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IS_ASSEMBLED_WITH",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "IS_ASSEMBLED_WITH_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_ASSEMBLED_WITH_OUT_ENUM",
+                  "symbols": [
+                    "Contract"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "IS_ASSEMBLED_WITH_IN_ENUM",
+                  "symbols": [
+                    "Contract_Component"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HAS_PRODUCT",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_PRODUCT_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_PRODUCT_OUT_ENUM",
+                  "symbols": [
+                    "Contract_Component"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_PRODUCT_IN_ENUM",
+                  "symbols": [
+                    "Product"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "INTERACTS_WITH",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "INTERACTS_WITH_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "INTERACTS_WITH_OUT_ENUM",
+                  "symbols": [
+                    "Relationship_Manager",
+                    "Staff_Member",
+                    "Person",
+                    "Organisation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "INTERACTS_WITH_IN_ENUM",
+                  "symbols": [
+                    "Interaction"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Interaction_Recorded_User",
+          "type": "string"
+        },
+        {
+          "name": "Interaction_Recorded_Date",
+          "type": "string"
+        },
+        {
+          "name": "Interaction_Last_Update_User",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Last_Update_Date",
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HAS_COST_EVENT",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_COST_EVENT_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_COST_EVENT_OUT_ENUM",
+                  "symbols": [
+                    "Person",
+                    "Organisation"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_COST_EVENT_IN_ENUM",
+                  "symbols": [
+                    "Cost_Event"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HAS_ALERT",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_ALERT_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_ALERT_OUT_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Person"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_ALERT_IN_ENUM",
+                  "symbols": [
+                    "Alert"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HAS_COMPLAINT",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_COMPLAINT_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_COMPLAINT_OUT_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Person"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_COMPLAINT_IN_ENUM",
+                  "symbols": [
+                    "Complaint"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HAS_SERVICE_ISSUE",
+      "type": "record",
+      "schematype": "relationship",
+"namespace":"org.profile.customer.avro.private",
+      "fields": [
+        {
+          "name": "vertices",
+          "type": {
+            "type": "record",
+            "name": "HAS_SERVICE_ISSUE_vertices",
+            "fields": [
+              {
+                "name": "out_vertex",
+                "type": "string"
+              },
+              {
+                "name": "out_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_SERVICE_ISSUE_OUT_ENUM",
+                  "symbols": [
+                    "Organisation",
+                    "Person"
+                  ]
+                }
+              },
+              {
+                "name": "in_vertex",
+                "type": "string"
+              },
+              {
+                "name": "in_vertex_label",
+                "type": {
+                  "type": "enum",
+                  "name": "HAS_SERVICE_ISSUE_IN_ENUM",
+                  "symbols": [
+                    "Service_Issue"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Relationship_Manager",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Created_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Inactivated_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Solicitation_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Confidential_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Importance_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "PERSON_NAME_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type_Description",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Prefix",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_One",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Given_Name_Two",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Three",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Four",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Last_Name",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Generation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Citizenship",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Gender",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Nationality",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residence_Country",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Career",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Job_Title",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employment_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Investment_Relevant_Professional",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Current_Employer",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Previous_Employer",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employment_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Occupation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Relationship_Manager_relationships",
+              "fields": [
+                {
+                  "name": "IS_RELATIONSHIP_MANAGER_TO",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_RELATIONSHIP_MANAGER_TO"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "REPORTS_TO",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.REPORTS_TO"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ADDRESS",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ADDRESS"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_PHONE_NUMBER",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PHONE_NUMBER"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_EMAIL",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_EMAIL"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SOCIAL_MEDIA_HANDLE"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "INTERACTS_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.INTERACTS_WITH"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Staff_Member",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Created_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Inactivated_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Solicitation_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Confidential_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Importance_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "PERSON_NAME_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type_Description",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Prefix",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_One",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Given_Name_Two",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Three",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Four",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Last_Name",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Generation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Marital_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Country_of_Birth",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Citizenship",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Gender",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Birth_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Children_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "User_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Nationality",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residence_Country",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Death_Notification_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Has_Self_Employed_Business",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Is_Smoker",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Ethnic_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Legal_Capacity",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residential_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Mothers_Maiden_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Birth_Town",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Expected_Retirement_Age",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Staff_Member_relationships",
+              "fields": [
+                {
+                  "name": "REPORTS_TO",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.REPORTS_TO"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ADDRESS",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ADDRESS"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_PHONE_NUMBER",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PHONE_NUMBER"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_EMAIL",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_EMAIL"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SOCIAL_MEDIA_HANDLE"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "INTERACTS_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.INTERACTS_WITH"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Person",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Created_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Inactivated_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Solicitation_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Confidential_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Importance_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "PERSON_NAME_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type_Description",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Prefix",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_One",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Given_Name_Two",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Three",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Four",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Last_Name",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Generation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Marital_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Country_of_Birth",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Citizenship",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Gender",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Birth_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Children_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "User_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Nationality",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residence_Country",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Death_Notification_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Has_Self_Employed_Business",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Is_Smoker",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Ethnic_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Legal_Capacity",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residential_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Mothers_Maiden_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Birth_Town",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Expected_Retirement_Age",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Net_Worth_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Account_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Income_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "External_Income_Source_Flag",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Is_Politically_Exposed",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Protected_Profile_Management_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Student_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "VIP_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Premier_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Corporate_Client_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Blocked_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Offshore_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Wealth_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Pay_No_Pay_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Bad_Dealing_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Collects_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Employment",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Non_Resident_Certification",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Dependants_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Third_Party_Account_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BTA_Code",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BTA_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "IDENTIFIER_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Identifier_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Reference_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "identifier_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Issue_Location",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Career",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Job_Title",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employment_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Investment_Relevant_Professional",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Current_Employer",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Previous_Employer",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employment_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Occupation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Person_relationships",
+              "fields": [
+                {
+                  "name": "HAS_RELATIONSHIP_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_RELATIONSHIP_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "WORKS_FOR",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.WORKS_FOR"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ADDRESS",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ADDRESS"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_PHONE_NUMBER",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PHONE_NUMBER"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_EMAIL",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_EMAIL"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SOCIAL_MEDIA_HANDLE"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_AGREEMENT_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_AGREEMENT_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "IS_HOLDER_OF",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_HOLDER_OF"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "INTERACTS_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.INTERACTS_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_COST_EVENT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_COST_EVENT"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ALERT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ALERT"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_COMPLAINT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_COMPLAINT"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SERVICE_ISSUE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SERVICE_ISSUE"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Organisation",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Created_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Inactivated_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Solicitation_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Confidential_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Importance_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "ORG_NAME_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Organisation_Name",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Organisation_Name_Type",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Organisation_Name_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Organisation_Name_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Organisation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Industry_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Established_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Profit_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Blocked_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Nature_of_Business",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employee_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Enterprise_Size",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Net_Worth_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Holdings_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Asset_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "External_Income_Source_Flag",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Protected_Profile_Management_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BTA_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Wealth_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BPB_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Employment",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "IDENTIFIER_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Identifier_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Reference_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "identifier_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Issue_Location",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Organisation_relationships",
+              "fields": [
+                {
+                  "name": "HAS_RELATIONSHIP_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_RELATIONSHIP_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "IS_PARENT_TO",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_PARENT_TO"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "IS_ULTIMATE_PARENT_TO",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_ULTIMATE_PARENT_TO"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ADDRESS",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ADDRESS"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_PHONE_NUMBER",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PHONE_NUMBER"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_EMAIL",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_EMAIL"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SOCIAL_MEDIA_HANDLE"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_AGREEMENT_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_AGREEMENT_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "IS_HOLDER_OF",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_HOLDER_OF"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "INTERACTS_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.INTERACTS_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_COST_EVENT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_COST_EVENT"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ALERT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ALERT"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_COMPLAINT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_COMPLAINT"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SERVICE_ISSUE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SERVICE_ISSUE"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Person_Prospect",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "PERSON_NAME_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Person_Name_Usage_Type_Description",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Prefix",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_One",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Given_Name_Two",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Three",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Given_Name_Four",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Last_Name",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Generation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Name_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Marital_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Country_of_Birth",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Citizenship",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Gender",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Birth_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Children_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "User_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Nationality",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residence_Country",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Death_Notification_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Has_Self_Employed_Business",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Is_Smoker",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Ethnic_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Legal_Capacity",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residential_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Mothers_Maiden_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Birth_Town",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Expected_Retirement_Age",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Person_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Net_Worth_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Account_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Income_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "External_Income_Source_Flag",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Is_Politically_Exposed",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Protected_Profile_Management_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Student_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "VIP_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Premier_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Corporate_Client_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Blocked_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Offshore_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Wealth_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Pay_No_Pay_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Bad_Dealing_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Collects_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Employment",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Non_Resident_Certification",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Dependants_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Third_Party_Account_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BTA_Code",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BTA_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "IDENTIFIER_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Identifier_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Reference_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "identifier_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Issue_Location",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Career",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Job_Title",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employment_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Investment_Relevant_Professional",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Current_Employer",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Previous_Employer",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employment_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Occupation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "CONT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Created_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Inactivated_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Solicitation_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Confidential_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Importance_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Person_Prospect_relationships",
+              "fields": [
+                {
+                  "name": "HAS_RELATIONSHIP_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_RELATIONSHIP_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "WORKS_FOR",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.WORKS_FOR"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_ADDRESS",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ADDRESS"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_PHONE_NUMBER",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PHONE_NUMBER"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_EMAIL",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_EMAIL"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SOCIAL_MEDIA_HANDLE"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Organisation_Prospect",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Created_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Inactivated_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Solicitation_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Confidential_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Importance_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Client_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identification_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "ORG_NAME_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Organisation_Name",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Organisation_Name_Type",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Organisation_Name_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Organisation_Name_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Organisation_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Industry_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Established_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Profit_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Blocked_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Nature_of_Business",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Employee_Count",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Enterprise_Size",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Net_Worth_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Holdings_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Total_Asset_Value",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "External_Income_Source_Flag",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Income_Source_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Protected_Profile_Management_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BTA_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Wealth_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "BPB_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "KYC_Checked_Employment",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "IDENTIFIER_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Identifier_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Reference_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Identifier_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "identifier_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Issue_Location",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Source_Identifier_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Organisation_Prospect_relationships",
+              "fields": [
+                {
+                  "name": "HAS_ADDRESS",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_ADDRESS"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_PHONE_NUMBER",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PHONE_NUMBER"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_EMAIL",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_EMAIL"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "HAS_SOCIAL_MEDIA_HANDLE",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_SOCIAL_MEDIA_HANDLE"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Address",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "ADDRESS_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Country",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "County_Code",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residence_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Province_State",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Address_Line_One",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Address_Line_Two",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Address_Line_Three",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "City",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Postal_Code",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Address_Standard_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Residence_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Building_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Street_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Street_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Street_Suffix",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phone_Number",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONTACT_METHOD_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Phone_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Phone_Number_Type_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Email",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONTACT_METHOD_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Email_Address",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Email_Type_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Social_Media_Handle",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "Social_Media_Handle_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Social_Media_Handle_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Social_Media_Handle_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Social_Media_Handle_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Social_Media_Handle_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Social_Media_Handle_End_Data",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contract",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONTRACT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "ADMIN_CONTRACT_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Language_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Currency_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Frequency_Mode",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Billing_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Premium_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Next_Bill_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Current_Cash_Value_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Agreement_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Account_Last_Transaction_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Termination_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Termination_Reason",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Agreement_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Agreement_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Service_Level_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Signed_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Executed_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Bus_Org_Unit_ID",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Business_Unit",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Account_Number",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Account_Entry_Flag",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Card_Entry_Flag",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Contract_relationships",
+              "fields": [
+                {
+                  "name": "IS_LINKED_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_LINKED_WITH"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "IS_ASSEMBLED_WITH",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_ASSEMBLED_WITH"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contract_Component",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "CONTR_COMPONENT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Status_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Current_Cash_Value_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Premium_Amount",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Issue_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Base_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Contract_Component_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Service_Arrangement_Type_Code",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Expiry_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "CONTR_COMP_VAL_ID",
+          "changed": true,
+          "type": "string"
+        },
+        {
+          "name": "Domain_Value_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Domain_Product_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Value_String",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Contract_Component_relationships",
+              "fields": [
+                {
+                  "name": "HAS_PRODUCT",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.HAS_PRODUCT"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "PROD_TP_CD",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Product_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Product_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Product_Expiry_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Product_relationships",
+              "fields": [
+                {
+                  "name": "IS_RECOMMENDED_FOR",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_RECOMMENDED_FOR"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Product_Recommendation",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "PROD_TP_CD",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Product_Name",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Product_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Product_Expiry_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "relationships",
+          "type": [
+            {
+              "type": "record",
+              "name": "Product_Recommendation_relationships",
+              "fields": [
+                {
+                  "name": "IS_RECOMMENDED_FOR",
+                  "type": [
+                    {
+                      "type": "array",
+                      "items": "org.profile.customer.avro.private.IS_RECOMMENDED_FOR"
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            },
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Interaction",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "INTERACTION_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Recorded_by_User",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Point",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Subject_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Note_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Invalid_Indicator",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Category_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Case_ID",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Interaction_Response_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Next_Reminder_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Next_Action_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cost_Event",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "Customer_Event_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Customer_Event_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Event_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Event_Cost",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Country_Area_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Country_Area_Category_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Country_Area_Sub_Category_Level_3",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Country_Category_Level_4",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Country_Sub_Category_Level_5",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Segment_Category_Code_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Segment_Category_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Segment_Code_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Customer_Segment_Description_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Group_Code_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Group_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Category_Code_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Category_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Sub_Category_Code_Level_3",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Sub_Category_Level_3",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Sub_Category_Type_Code_Level_4",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Sub_Category_Type_Level_4",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Code_Level_5",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Reporting_Product_Level_5",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Area_Code_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Area_Level_1",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Category_Code_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Category_Level_2",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Sub_Category_Code_Level_3",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Sub_Category_Level_3",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Group_Code_Level_4",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Group_Level_4",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Type_Code_Level_5",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Type_Level_5",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Sub_Type_Code_Level_6",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Sub_Type_Level_6",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Code_Level_7",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Process_Level_7",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Channel_Type_Code",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Channel_Type_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alert",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "ALERT_ID",
+          "changed": true,
+          "type": "string",
+          "primarykey": "true"
+        },
+        {
+          "name": "Alert_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Alert_Category",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Alert_Severity",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Alert_Action",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Alert_Description",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Alert_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Alert_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Complaint",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "Complaint_ID",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ],
+          "primarykey": "true"
+        },
+        {
+          "name": "Complaint_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Complaint_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Complaint_Message",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Complaint_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Complaint_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Service_Issue",
+      "type": "record",
+      "schematype": "entity",
+"namespace":"org.profile.customer.avro.public",
+      "fields": [
+        {
+          "name": "Service_Issue_ID",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ],
+          "primarykey": "true"
+        },
+        {
+          "name": "Service_Issue_Type",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Service_Issue_Status",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Service_Issue_Message",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Service_Issue_Start_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        {
+          "name": "Service_Issue_End_Date",
+          "changed": true,
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    }
+]
