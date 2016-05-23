@@ -14,17 +14,18 @@ val SparkVersion = "1.6.1"
 libraryDependencies ++= Seq(
   "org.apache.avro" % "avro" % "1.8.0",
   "ch.qos.logback" % "logback-classic" % "1.1.3",
+  "net.sf.jopt-simple" % "jopt-simple" % "4.9",
   "com.orientechnologies" % "orientdb-core" % OrientDBVersion,
   "com.orientechnologies" % "orientdb-object" % OrientDBVersion,
   "com.orientechnologies" % "orientdb-graphdb" % OrientDBVersion,
   "com.orientechnologies" % "orientdb-client" % OrientDBVersion,
   "com.opencsv" % "opencsv" % "3.3",
   "org.apache.commons" % "commons-csv" % "1.2",
-  "org.apache.spark" %% "spark-core" % SparkVersion,
-  "org.apache.spark" %% "spark-sql" % SparkVersion,
-  "org.apache.spark" %% "spark-streaming" % SparkVersion,
-  "org.apache.spark" %% "spark-mllib" % SparkVersion,
-  "com.databricks" %% "spark-csv" % "1.4.0",
+//  "org.apache.spark" %% "spark-core" % SparkVersion,
+//  "org.apache.spark" %% "spark-sql" % SparkVersion,
+//  "org.apache.spark" %% "spark-streaming" % SparkVersion,
+//  "org.apache.spark" %% "spark-mllib" % SparkVersion,
+//  "com.databricks" %% "spark-csv" % "1.4.0",
   "com.typesafe.play" %% "play-json" % "2.5.2",
 
 

@@ -1,14 +1,28 @@
 package com.systematicmethods.apex.schema
 
-import java.io.InputStreamReader
-
-import org.apache.avro.generic.GenericRecord
-import java.io.StringWriter
-import java.io.PrintWriter
+import java.io.{BufferedInputStream, FileInputStream}
 
 import org.apache.avro.Schema
 import play.api.libs.json._
 
+object SchemaReferenceBuilder {
+  def apply(namespace:String,
+      entitiesFile: String,
+      relationshipsFile: String,
+      propertiesFile: String,
+      validRelationshipsFile: String,
+      relationshipGroupsFile: String,
+      entityGroupsFile: String):SchemaReferenceBuilder = {
+    new SchemaReferenceBuilder(namespace,
+      Entities(new BufferedInputStream(new FileInputStream(entitiesFile))),
+      Relationships(new BufferedInputStream(new FileInputStream(relationshipsFile))),
+      Properties(new BufferedInputStream(new FileInputStream(propertiesFile))),
+      RelationshipsValid(new BufferedInputStream(new FileInputStream(validRelationshipsFile))),
+      RelationshipGroups(new BufferedInputStream(new FileInputStream(relationshipGroupsFile))),
+      EntityGroups(new BufferedInputStream(new FileInputStream(entityGroupsFile)))
+    )
+  }
+}
 
 class SchemaReferenceBuilder(namespace:String,
     entities: Entities,
@@ -27,13 +41,12 @@ class SchemaReferenceBuilder(namespace:String,
     val avsc = Json.stringify(json)
     // will throw an exception if its not a valid schema
     try {
-      Option((new org.apache.avro.Schema.Parser()).parse(avsc))
+      Option(new org.apache.avro.Schema.Parser().parse(avsc))
     } catch {
-      case(ex:Exception) => {
+      case(ex:Exception) =>
         println(s"${ex.getLocalizedMessage} source:")
         println(Json.prettyPrint(json))
         None
-      }
     }
 
   }
@@ -60,17 +73,17 @@ class SchemaReferenceBuilder(namespace:String,
     val propsrel = vrelsOpt.foldLeft(props)((props, vrels) => props.:+(vrels))
 
     val fields = Seq[(String, JsValue)](
-        ("name" -> JsString(entity.avroname)), 
-        ("type" -> JsString("record")), 
-        ("schematype" -> JsString("entity")), 
-        ("namespace" -> JsString(s"${namespace}.public")),
-        ("fields" -> propsrel)
+        "name" -> JsString(entity.avroname),
+        "type" -> JsString("record"),
+        "schematype" -> JsString("entity"),
+        "namespace" -> JsString(s"${namespace}.public"),
+        "fields" -> propsrel
         )
     JsObject(fields)
   }
   
   private def makeEntityRelationships(namespace:String, relavroname:String, activeValidRels: Map[String, RelationshipValid]): Option[JsObject] = {
-    if (activeValidRels.size == 0)  None
+    if (activeValidRels.isEmpty)  None
     else {
       // make sure relationships are unique as there can be more than one
       val relnames = activeValidRels.values.toList.map(vl => vl.relationshipAvroName).distinct
@@ -79,23 +92,22 @@ class SchemaReferenceBuilder(namespace:String,
         relname <- relnames
       } yield {
         JsObject(Seq(
-          ("name" -> JsString(relname)), //  + "_" + rel.entityEndAvroName
-          ("type" -> JsArray(Seq(JsObject(Seq(
-              ("type" -> JsString("array")),
-              ("items" -> JsString(namespace + ".private." + relname))
-          ))))
+          "name" -> JsString(relname), //  + "_" + rel.entityEndAvroName
+          "type" -> JsArray(Seq(JsObject(Seq(
+              "type" -> JsString("array"),
+              "items" -> JsString(namespace + ".private." + relname)
+          )))
         )))
       }
-      val nullrels = rels.+:(JsString("null"))
       Some(JsObject(Seq(
-          ("name" -> JsString("relationships")), 
-          ("type" -> JsArray(Seq(
+          "name" -> JsString("relationships"),
+          "type" -> JsArray(Seq(
             JsString("null"),
             JsObject(Seq(
-              ("type" -> JsString("record")),
-              ("name" -> JsString(relavroname + "_relationships")),
-              ("fields" -> JsArray(rels))
-            )))
+              "type" -> JsString("record"),
+              "name" -> JsString(relavroname + "_relationships"),
+              "fields" -> JsArray(rels)
+            ))
           ))
         ))
       )
@@ -110,11 +122,11 @@ class SchemaReferenceBuilder(namespace:String,
     val fields = props.+:(relationship)
     
     val record = Seq[(String, JsValue)](
-        ("name" -> JsString(rel.avroname)), 
-        ("type" -> JsString("record")), 
-        ("schematype" -> JsString("relationship")), 
-        ("namespace" -> JsString(s"${namespace}.private")),
-        ("fields" -> fields)
+        "name" -> JsString(rel.avroname),
+        "type" -> JsString("record"),
+        "schematype" -> JsString("relationship"),
+        "namespace" -> JsString(s"${namespace}.private"),
+        "fields" -> fields
         )
     JsObject(record)
   }
@@ -127,38 +139,35 @@ class SchemaReferenceBuilder(namespace:String,
     val outsyms = outEntities.map(aname => JsString(SchemaItem.avroname(aname)))
     val insyms = inEntities.map(aname => JsString(SchemaItem.avroname(aname)))
     val fields = JsObject(Seq(
-      ("name" -> JsString("vertices")), 
-      ("type" -> JsObject(Seq(
-        ("name" -> JsString(rel.avroname + "_vertices")),
-        ("type" -> JsString("record")),
-        ("fields" -> JsArray(Seq(
+      "name" -> JsString("vertices"),
+      "type" -> JsObject(Seq(
+        "name" -> JsString(rel.avroname + "_vertices"),
+        "type" -> JsString("record"),
+        "fields" -> JsArray(Seq(
           JsObject(Seq(
-            ("name" -> JsString("out_vertex")),
-            ("type" -> JsString("string")))),
+            "name" -> JsString("out_vertex"),
+            "type" -> JsString("string"))),
           JsObject(Seq(
-            ("name" -> JsString("out_vertex_label")),
-            ("type" -> JsObject(Seq(
-              ("type" -> JsString("enum")),
-              ("name" -> JsString(rel.avroname + "_OUT_ENUM")),
-              ("symbols" -> JsArray(outsyms)),
-              ("schematype" -> JsArray(outpks))
-            ))
-          ))),
+            "name" -> JsString("out_vertex_label"),
+            "type" -> JsObject(Seq(
+              "type" -> JsString("enum"),
+              "name" -> JsString(rel.avroname + "_OUT_ENUM"),
+              "symbols" -> JsArray(outsyms),
+              "schematype" -> JsArray(outpks)
+            )))),
           JsObject(Seq(
-            ("name" -> JsString("in_vertex")),
-            ("type" -> JsString("string")))),
+            "name" -> JsString("in_vertex"),
+            "type" -> JsString("string"))),
           JsObject(Seq(
-            ("name" -> JsString("in_vertex_label")),
-            ("type" -> JsObject(Seq(
-              ("type" -> JsString("enum")),
-              ("name" -> JsString(rel.avroname + "_IN_ENUM")),
-              ("symbols" -> JsArray(insyms)),
-              ("schematype" -> JsArray(inpks))
-            ))
-          )))
-        )))
-      ))
-    )))
+            "name" -> JsString("in_vertex_label"),
+            "type" -> JsObject(Seq(
+              "type" -> JsString("enum"),
+              "name" -> JsString(rel.avroname + "_IN_ENUM"),
+              "symbols" -> JsArray(insyms),
+              "schematype" -> JsArray(inpks)
+            ))))
+        ))
+      ))))
     fields  
   }
   
@@ -173,8 +182,8 @@ class SchemaReferenceBuilder(namespace:String,
     }
     props.map(ep => {
       JsObject(Seq(
-          ("entity" -> JsString(SchemaItem.avroname(ep._1))), 
-          ("primarykey" -> JsString(ep._2))))  
+          "entity" -> JsString(SchemaItem.avroname(ep._1)),
+          "primarykey" -> JsString(ep._2)))
     })
   }
   
@@ -195,7 +204,7 @@ class SchemaReferenceBuilder(namespace:String,
   
   private def makeProperty(rec:Property, usePrimaryKey:Boolean):JsValue = {
     val dt = if (rec.dataType == "timestamp") 
-      JsObject(Seq(("type" -> JsString("long")), ("logicalType" -> JsString("timestamp-millis"))))  
+      JsObject(Seq("type" -> JsString("long"), "logicalType" -> JsString("timestamp-millis")))
     else 
       JsString(rec.dataType)
     val dtopt = if (rec.optional == "Optional") 
@@ -203,8 +212,8 @@ class SchemaReferenceBuilder(namespace:String,
     else 
       dt
     val fields = Seq[(String, JsValue)](
-        ("name" -> JsString(rec.avroname)), 
-        ("type" -> dtopt))
+        "name" -> JsString(rec.avroname),
+        "type" -> dtopt)
         
     val fields2 = if (usePrimaryKey && rec.isPrimaryKey)
       fields.+:("primarykey" -> JsBoolean(true))

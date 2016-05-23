@@ -11,103 +11,99 @@ import java.io.FileReader
 import org.junit.Assert._
 
 class SchemaCompareTest {
+  val loader = this.getClass.getClassLoader
+
   @Test
-  def compare091schema: Unit = {
-    val avsc1 = scala.io.Source.fromFile("data/GraphStore_v0_9_1.avsc").mkString
-    val avsc2 = scala.io.Source.fromFile("data/fromCSV-091.avsc").mkString
+  def compare091schema(): Unit = {
+    val avsc1 = getresource("GraphStore_v0_9_1.avsc")
+    val avsc2 = getresource("fromCSV-091.avsc")
     
     SchemaCompare.compareSchema(avsc1, avsc2) match {
-      case Some(reslist) => {
+      case Some(reslist) =>
         println(reslist.mkString)
         fail("schema types should be the same")
-      }
-      case None => {}
+      case None =>
     }
   }
 
   @Test
-  def compare091schema_diff_types: Unit = {
-    val avsc1 = scala.io.Source.fromFile("data/fromCSV-091.avsc").mkString
-    val avsc2 = scala.io.Source.fromFile("data/fromCSV-091-diff-types.avsc").mkString
+  def compare091schema_diff_types(): Unit = {
+    val avsc1 = getresource("fromCSV-091.avsc")
+    val avsc2 = getresource("fromCSV-091-diff-types.avsc")
     
     SchemaCompare.compareSchema(avsc1, avsc2) match {
-      case Some(reslist) => {
+      case Some(reslist) =>
         println(reslist.mkString)
         assertEquals(3, reslist.size)
-        assertEquals(1, reslist.filter(res => res.contains("Different types")).size)
-      }
-      case None => {
+        assertEquals(1, reslist.count(res => res.contains("Different types")))
+      case None =>
         fail("schema files should differ")
-      }
     }
   }
 
   @Test
-  def compare091schema_diff_fields: Unit = {
-    val avsc1 = scala.io.Source.fromFile("data/fromCSV-091.avsc").mkString
-    val avsc2 = scala.io.Source.fromFile("data/fromCSV-091-diff-fields.avsc").mkString
+  def compare091schema_diff_fields(): Unit = {
+    val avsc1 = getresource("fromCSV-091.avsc")
+    val avsc2 = getresource("fromCSV-091-diff-fields.avsc")
     
     SchemaCompare.compareSchema(avsc1, avsc2) match {
-      case Some(reslist) => {
+      case Some(reslist) =>
         println(reslist.mkString)
         assertEquals(3, reslist.size)
-        assertEquals(3, reslist.filter(res => res.contains("Different fields")).size)
-      }
-      case None => {
+        assertEquals(3, reslist.count(res => res.contains("Different fields")))
+      case None =>
         fail("schema files should differ")
-      }
     }
   }
 
   @Test
-  def compare091schema_diff_entity_relationships: Unit = {
-    val avsc1 = scala.io.Source.fromFile("data/fromCSV-091.avsc").mkString
-    val avsc2 = scala.io.Source.fromFile("data/fromCSV-091-diff-entity-relationships.avsc").mkString
+  def compare091schema_diff_entity_relationships(): Unit = {
+    val avsc1 = getresource("fromCSV-091.avsc")
+    val avsc2 = getresource("fromCSV-091-diff-entity-relationships.avsc")
 
     SchemaCompare.compareSchema(avsc1, avsc2) match {
-      case Some(reslist) => {
+      case Some(reslist) =>
         println(reslist.mkString)
         assertEquals(2, reslist.size)
-        assertEquals(2, reslist.filter(res => res.contains("Different entity relationships")).size)
-      }
-      case None => {
+        assertEquals(2, reslist.count(res => res.contains("Different entity relationships")))
+      case None =>
         fail("schema files should differ")
-      }
     }
   }
 
   @Test
-  def compare091schema_diff_relationships: Unit = {
-    val avsc1 = scala.io.Source.fromFile("data/fromCSV-091.avsc").mkString
-    val avsc2 = scala.io.Source.fromFile("data/fromCSV-091-diff-relationships.avsc").mkString
+  def compare091schema_diff_relationships(): Unit = {
+    val avsc1 = getresource("fromCSV-091.avsc")
+    val avsc2 = getresource("fromCSV-091-diff-relationships.avsc")
 
     SchemaCompare.compareSchema(avsc1, avsc2) match {
-      case Some(reslist) => {
+      case Some(reslist) =>
         println(reslist.mkString)
         assertEquals(3, reslist.size)
-        assertEquals(1, reslist.filter(res => res.contains("Different relationships")).size)
-        assertEquals(1, reslist.filter(res => res.contains("Different enum")).size)
-        assertEquals(1, reslist.filter(res => res.contains("Different primary keys")).size)
-      }
-      case None => {
+        assertEquals(1, reslist.count(res => res.contains("Different relationships")))
+        assertEquals(1, reslist.count(res => res.contains("Different enum")))
+        assertEquals(1, reslist.count(res => res.contains("Different primary keys")))
+      case None =>
         fail("schema files should differ")
-      }
     }
   }
 
   @Test
-  def compare091schema_invalid: Unit = {
-    val avsc1 = scala.io.Source.fromFile("data/GraphStore_v0_9_1.avsc").mkString
-    val avsc2 = scala.io.Source.fromFile("data/invalid.avsc").mkString
+  def compare091schema_invalid(): Unit = {
+    val avsc1 = getresource("GraphStore_v0_9_1.avsc")
+    val avsc2 = getresource("invalid.avsc")
     
     SchemaCompare.compareSchema(avsc1, avsc2) match {
-      case Some(reslist) => {
+      case Some(reslist) =>
         println(reslist.mkString)
         assertEquals(1, reslist.size)
-      }
-      case None => {
+      case None =>
         fail("schema files should differ")
-      }
     }
   }
+
+  private def getresource(name:String) : String = {
+    scala.io.Source.fromInputStream(loader.getResourceAsStream(name)).mkString
+  }
+
 }

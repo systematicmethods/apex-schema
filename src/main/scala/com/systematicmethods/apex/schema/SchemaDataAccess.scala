@@ -81,16 +81,3 @@ object SchemaDataAccess {
     }
   }
 }
-
-//  def testImportAvro_Classes: Unit = {
-//    val rd = this.getClass.getClassLoader.getResourceAsStream("Classes.csv")
-//    val brdr = new InputStreamReader(rd)
-//    val entities = SchemaReferences.importCSVAsAvro(brdr, "Class", "Class")
-//    assertEquals(64, entities.size)
-//  }
-//  def testImportAvro_Class_Properties: Unit = {
-//    val rd = this.getClass.getClassLoader.getResourceAsStream("Class_Properties.csv")
-//    val brdr = new InputStreamReader(rd)
-//    val entities = SchemaReferences.importCSVAsAvro(brdr, "Property", List("Class", "Property"))
-//    assertEquals(462, entities.size)
-//  }

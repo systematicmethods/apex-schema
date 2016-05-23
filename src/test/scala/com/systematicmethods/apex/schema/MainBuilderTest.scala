@@ -2,9 +2,10 @@ package com.systematicmethods.apex.schema
 
 import org.junit.{Assert, Test}
 
-class SchemaReferenceBuilderTest {
+class MainBuilderTest {
   @Test
   def testbuild_entities(): Unit = {
+    //BuilderMain.main()
     val loader = this.getClass.getClassLoader
     val entities = Entities(loader.getResourceAsStream("Entities.csv"))
     val properties = Properties(loader.getResourceAsStream("Class_Properties.csv"))

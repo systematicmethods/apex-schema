@@ -1,7 +1,7 @@
 package com.systematicmethods.apex.schema
 
 import org.apache.avro.Schema
-import org.apache.avro.Schema.{Field, Parser, Type}
+import org.apache.avro.Schema.{Parser, Type}
 
 import scala.collection.JavaConverters._
 
@@ -13,16 +13,14 @@ object SchemaCompare {
     val schema1 = try {
       new Parser().parse(avsc1)
     } catch {
-      case (ex: Exception) => {
+      case (ex: Exception) =>
         return Option(List(s"Parser error in avsc1 ${ex.getMessage}"))
-      }
     }
     val schema2 = try {
       new Parser().parse(avsc2)
     } catch {
-      case (ex: Exception) => {
+      case (ex: Exception) =>
         return Option(List(s"Parser error in avsc2 ${ex.getMessage}"))
-      }
     }
 
     val result = compareTypes(schema1, schema2) ++
@@ -36,8 +34,8 @@ object SchemaCompare {
     val schemas1 = getUnionTypes(schema1)
     val schemas2 = getUnionTypes(schema2)
 
-    val t1names = schemas1.map(t => t.getFullName).toList.sortBy(x => x)
-    val t2names = schemas2.map(t => t.getFullName).toList.sortBy(x => x)
+    val t1names = schemas1.map(t => t.getFullName).sortBy(x => x)
+    val t2names = schemas2.map(t => t.getFullName).sortBy(x => x)
 
     if (!t1names.equals(t2names)) {
       val result = s"""Different types (entities)
@@ -98,11 +96,11 @@ object SchemaCompare {
       schema2 <- schemas2.filter(sc2 => sc2.getName == schema1.getName)
       rel1 = schema1.getField(RELATIONSHIPS)
       rel2 = schema2.getField(RELATIONSHIPS)
-      if (rel1 != null && rel2 != null)
+      if rel1 != null && rel2 != null
       rel1rec <- rel1.schema().getTypes.asScala.filter(sc => sc.getType == Type.RECORD).toList
       rel2rec <- rel2.schema().getTypes.asScala.filter(sc => sc.getType == Type.RECORD).toList
-      rel1types = rel1rec.getFields.asScala.map(fld => (fld.name)).toList.sortBy(x => x)
-      rel2types = rel2rec.getFields.asScala.map(fld => (fld.name)).toList.sortBy(x => x)
+      rel1types = rel1rec.getFields.asScala.map(fld => fld.name).toList.sortBy(x => x)
+      rel2types = rel2rec.getFields.asScala.map(fld => fld.name).toList.sortBy(x => x)
       if rel1types != rel2types
     } yield {
       s"""Different entity relationships for ${schema1.getName}
@@ -183,8 +181,8 @@ object SchemaCompare {
     val res2 = for {
       schema1 <- schemas1
       schema2 <- schemas2.filter(sc2 => sc2.getName == schema1.getName)
-      fldname1 = schema1.getField(VERTICES).schema().getFields.asScala.map(fld => (fld.name)).toList.sortBy(x => x)
-      fldname2 = schema2.getField(VERTICES).schema().getFields.asScala.map(fld => (fld.name)).toList.sortBy(x => x)
+      fldname1 = schema1.getField(VERTICES).schema().getFields.asScala.map(fld => fld.name).toList.sortBy(x => x)
+      fldname2 = schema2.getField(VERTICES).schema().getFields.asScala.map(fld => fld.name).toList.sortBy(x => x)
       if fldname1 != fldname2
     } yield {
       s"""Different relationships for ${schema1.getName}
